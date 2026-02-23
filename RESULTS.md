@@ -6,6 +6,11 @@
 - CPUs: ran xv6 with **CPUS=1** to force contention (with 2 CPUs and 2 busy processes, each child can run on its own CPU and tickets won’t noticeably affect share)
 - Workload: each child runs a CPU-bound loop for a fixed time budget (ticks) and reports a work counter.
 
+## Workload
+Each child runs a CPU-bound loop for a fixed duration measured in ticks using `uptime()`.
+Inside the loop it increments a counter (work units) as fast as possible, then prints the final count.
+Higher counts indicate more CPU time received during the run.
+
 ## Observations
 Trial 1:
 - A (30): 1638002
